@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Original illustration for Fitnex: jump rope, mid-jump. -->
+  <style>
+    .soft{fill:var(--illo-soft,#EFEBFF)} .floor{fill:var(--illo-floor,#E3DFF2)}
+    .acc{fill:var(--illo-accent,#7B6CF6)} .acc2{fill:var(--illo-accent-2,#F25C9B)}
+    .ink{fill:var(--illo-ink,#2F2E41)} .skin{fill:var(--illo-skin,#F1B899)}
+    .s{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .s-skin{stroke:var(--illo-skin,#F1B899)} .s-ink{stroke:var(--illo-ink,#2F2E41)} .s-acc{stroke:var(--illo-accent,#7B6CF6)}
+  </style>
+
+  <circle class="soft" cx="200" cy="210" r="160"/>
+  <ellipse class="floor" cx="200" cy="372" rx="58" ry="8"/>
+
+  <!-- rope over the head -->
+  <path class="s s-ink" stroke-width="4" d="M122 252C96 6 304 6 278 252"/>
+
+  <!-- motion marks -->
+  <path class="s s-acc" stroke-width="4" d="M168 352h-22M186 362h-14M236 352h22M220 362h14"/>
+
+  <!-- jumper -->
+  <path class="ink" d="M218 104c16-8 34-4 44 10-12-2-24 0-34 8z"/>
+  <path class="s s-skin" stroke-width="19" d="M188 272L174 304L186 332"/>
+  <path class="s s-skin" stroke-width="19" d="M212 272L228 304L214 332"/>
+  <ellipse class="ink" cx="186" cy="338" rx="16" ry="7"/>
+  <ellipse class="ink" cx="216" cy="338" rx="16" ry="7"/>
+  <path class="acc" d="M178 158c14-8 30-8 44 0l6 84c-18 8-38 8-56 0z"/>
+  <path class="acc2" d="M170 234h60l4 40h-26l-8-18-8 18h-26z"/>
+  <path class="s s-skin" stroke-width="13" d="M182 166L150 214L124 246"/>
+  <path class="s s-skin" stroke-width="13" d="M218 166L250 214L276 246"/>
+  <rect class="acc2" x="114" y="240" width="11" height="24" rx="4" transform="rotate(-20 119 252)"/>
+  <rect class="acc2" x="275" y="240" width="11" height="24" rx="4" transform="rotate(20 280 252)"/>
+  <rect class="skin" x="192" y="138" width="16" height="24" rx="6"/>
+  <circle class="skin" cx="200" cy="124" r="24"/>
+  <path class="ink" d="M176 122c0-18 10-30 24-30s24 12 24 28c-6-8-14-12-24-12s-18 4-24 14z"/>
+</svg>

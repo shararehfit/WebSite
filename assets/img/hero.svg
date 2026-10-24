@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520">
+  <!-- Original illustration for Fitnex. Colours come from CSS variables with fallbacks. -->
+  <style>
+    .soft{fill:var(--illo-soft,#EFEBFF)} .floor{fill:var(--illo-floor,#E3DFF2)}
+    .acc{fill:var(--illo-accent,#7B6CF6)} .acc2{fill:var(--illo-accent-2,#F25C9B)}
+    .ink{fill:var(--illo-ink,#2F2E41)} .skin{fill:var(--illo-skin,#F1B899)}
+    .card{fill:var(--illo-card,#FFFFFF)} .leaf{fill:var(--illo-leaf,#7FCFA6)} .metal{fill:var(--illo-metal,#A7A3BD)}
+    .bar{fill:var(--illo-bar,#E3DFF2)}
+    .s{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .s-skin{stroke:var(--illo-skin,#F1B899)} .s-ink{stroke:var(--illo-ink,#2F2E41)}
+    .s-acc{stroke:var(--illo-accent,#7B6CF6)} .s-card{stroke:var(--illo-card,#FFFFFF)}
+  </style>
+
+  <circle class="soft" cx="270" cy="250" r="200"/>
+  <ellipse class="floor" cx="260" cy="474" rx="220" ry="12"/>
+
+  <!-- plant -->
+  <path class="leaf" d="M106 420c-30-30-36-70-20-104 18 30 26 66 20 104z"/>
+  <path class="leaf" d="M108 420c6-40 26-70 56-84-4 36-24 66-56 84z"/>
+  <path class="leaf" d="M104 420c-26-14-50-20-70-12 20 18 44 22 70 12z"/>
+  <path class="acc" d="M78 418h56l-8 54h-40z"/>
+
+  <!-- dumbbell -->
+  <rect class="metal" x="392" y="452" width="64" height="8" rx="4"/>
+  <rect class="acc" x="380" y="436" width="16" height="40" rx="5"/>
+  <rect class="acc" x="452" y="436" width="16" height="40" rx="5"/>
+
+  <!-- heart-rate card -->
+  <g class="float-a">
+    <rect class="card" x="356" y="84" width="132" height="86" rx="14"/>
+    <path class="acc2" d="M381 106c-4-6-14-4-14 4 0 8 14 16 14 16s14-8 14-16c0-8-10-10-14-4z"/>
+    <rect class="bar" x="404" y="104" width="62" height="8" rx="4"/>
+    <rect class="bar" x="404" y="118" width="40" height="8" rx="4"/>
+    <path class="s s-acc" stroke-width="4" d="M368 148h22l8-16 10 28 10-22 6 10h32"/>
+  </g>
+
+  <!-- goal card -->
+  <g class="float-b">
+    <rect class="card" x="40" y="150" width="112" height="54" rx="14"/>
+    <circle class="acc" cx="67" cy="177" r="13"/>
+    <path class="s s-card" stroke-width="4" d="M61 177l5 5 9-10"/>
+    <rect class="bar" x="90" y="168" width="48" height="7" rx="3.5"/>
+    <rect class="bar" x="90" y="180" width="32" height="7" rx="3.5"/>
+  </g>
+
+  <!-- coach -->
+  <path class="ink" d="M284 102c18 2 28 20 24 44-2 12-10 20-18 22 6-14 6-30-6-44z"/>
+  <path class="s s-ink" stroke-width="26" d="M246 272L240 362L236 446"/>
+  <path class="s s-ink" stroke-width="26" d="M276 272L284 362L290 446"/>
+  <ellipse class="acc2" cx="230" cy="458" rx="21" ry="9"/>
+  <ellipse class="acc2" cx="296" cy="458" rx="21" ry="9"/>
+  <path class="s s-ink" stroke-width="7" d="M300 300c0-18 28-18 28 0"/>
+  <circle class="ink" cx="314" cy="320" r="23"/>
+  <circle class="metal" cx="305" cy="311" r="5" opacity=".6"/>
+  <path class="acc" d="M228 168c20-10 44-10 64 0l8 102c-26 10-54 10-80 0z"/>
+  <path class="ink" d="M221 262c26 8 52 8 78 0l2 18c-26 8-56 8-82 0z"/>
+  <rect class="skin" x="252" y="144" width="16" height="28" rx="6"/>
+  <circle class="skin" cx="260" cy="126" r="28"/>
+  <path class="ink" d="M232 124c-2-22 14-38 30-38s30 14 28 34c-8-12-22-18-34-16-10 2-18 8-24 20z"/>
+  <path class="s s-skin" stroke-width="15" d="M233 178L207 226L227 258"/>
+  <path class="s s-skin" stroke-width="15" d="M287 178L307 232L314 284"/>
+  <circle class="skin" cx="314" cy="290" r="8"/>
+</svg>

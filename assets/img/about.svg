@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 440">
+  <!-- Original illustration for Fitnex: coach with a clipboard, waving. -->
+  <style>
+    .soft{fill:var(--illo-soft,#EFEBFF)} .floor{fill:var(--illo-floor,#E3DFF2)}
+    .acc{fill:var(--illo-accent,#7B6CF6)} .acc2{fill:var(--illo-accent-2,#F25C9B)}
+    .ink{fill:var(--illo-ink,#2F2E41)} .skin{fill:var(--illo-skin,#F1B899)}
+    .card{fill:var(--illo-card,#FFFFFF)} .leaf{fill:var(--illo-leaf,#7FCFA6)} .bar{fill:var(--illo-bar,#E3DFF2)}
+    .s{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .s-skin{stroke:var(--illo-skin,#F1B899)} .s-ink{stroke:var(--illo-ink,#2F2E41)}
+    .s-acc{stroke:var(--illo-accent,#7B6CF6)} .s-card{stroke:var(--illo-card,#FFFFFF)}
+  </style>
+
+  <circle class="soft" cx="220" cy="220" r="180"/>
+  <ellipse class="floor" cx="220" cy="404" rx="190" ry="11"/>
+
+  <!-- progress card -->
+  <g class="float-b">
+    <rect class="card" x="30" y="96" width="120" height="96" rx="14"/>
+    <rect class="bar" x="48" y="112" width="58" height="8" rx="4"/>
+    <rect class="acc" x="50" y="150" width="14" height="26" rx="4" opacity=".45"/>
+    <rect class="acc" x="72" y="140" width="14" height="36" rx="4" opacity=".65"/>
+    <rect class="acc" x="94" y="130" width="14" height="46" rx="4" opacity=".85"/>
+    <rect class="acc2" x="116" y="118" width="14" height="58" rx="4"/>
+  </g>
+
+  <!-- speech bubble -->
+  <g class="float-a">
+    <path class="card" d="M310 54h88a14 14 0 0 1 14 14v40a14 14 0 0 1-14 14h-58l-18 16v-16h-12a14 14 0 0 1-14-14V68a14 14 0 0 1 14-14z"/>
+    <circle class="acc" cx="334" cy="88" r="13"/>
+    <path class="s s-card" stroke-width="4" d="M328 88l5 5 9-10"/>
+    <rect class="bar" x="356" y="80" width="40" height="7" rx="3.5"/>
+    <rect class="bar" x="356" y="92" width="26" height="7" rx="3.5"/>
+  </g>
+
+  <!-- plant -->
+  <path class="leaf" d="M376 380c-20-24-22-56-8-82 14 24 18 54 8 82z"/>
+  <path class="leaf" d="M378 380c4-32 20-54 44-64-2 28-20 52-44 64z"/>
+  <path class="acc2" d="M358 352h40l-6 30h-28z"/>
+
+  <!-- coach -->
+  <path class="ink" d="M242 118c18 2 28 20 24 44-2 12-10 20-18 22 6-14 6-30-6-44z"/>
+  <path class="s s-ink" stroke-width="26" d="M206 288L200 380"/>
+  <path class="s s-ink" stroke-width="26" d="M236 288L244 380"/>
+  <ellipse class="acc2" cx="194" cy="392" rx="21" ry="9"/>
+  <ellipse class="acc2" cx="250" cy="392" rx="21" ry="9"/>
+  <path class="acc" d="M188 184c20-10 44-10 64 0l8 102c-26 10-54 10-80 0z"/>
+  <path class="ink" d="M181 278c26 8 52 8 78 0l2 18c-26 8-56 8-82 0z"/>
+  <rect class="skin" x="212" y="160" width="16" height="28" rx="6"/>
+  <circle class="skin" cx="220" cy="142" r="28"/>
+  <path class="ink" d="M192 140c-2-22 14-38 30-38s30 14 28 34c-8-12-22-18-34-16-10 2-18 8-24 20z"/>
+  <!-- waving arm -->
+  <path class="s s-skin" stroke-width="15" d="M248 194L286 160L298 112"/>
+  <circle class="skin" cx="299" cy="106" r="9"/>
+  <!-- clipboard held against the body -->
+  <g transform="rotate(-8 214 236)">
+    <rect class="ink" x="188" y="204" width="56" height="70" rx="6"/>
+    <rect class="card" x="194" y="214" width="44" height="54" rx="3"/>
+    <rect class="acc" x="204" y="198" width="24" height="10" rx="4"/>
+    <rect class="bar" x="200" y="224" width="30" height="5" rx="2.5"/>
+    <rect class="bar" x="200" y="236" width="24" height="5" rx="2.5"/>
+    <rect class="bar" x="200" y="248" width="28" height="5" rx="2.5"/>
+  </g>
+  <path class="s s-skin" stroke-width="15" d="M192 194L176 240L206 252"/>
+  <circle class="skin" cx="210" cy="252" r="8"/>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Original illustration for Fitnex: tree pose on a mat. -->
+  <style>
+    .soft{fill:var(--illo-soft,#EFEBFF)} .floor{fill:var(--illo-floor,#E3DFF2)}
+    .acc{fill:var(--illo-accent,#7B6CF6)} .acc2{fill:var(--illo-accent-2,#F25C9B)}
+    .ink{fill:var(--illo-ink,#2F2E41)} .skin3{fill:var(--illo-skin-3,#8D5A3B)} .leaf{fill:var(--illo-leaf,#7FCFA6)}
+    .s{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .s-skin3{stroke:var(--illo-skin-3,#8D5A3B)} .s-ink{stroke:var(--illo-ink,#2F2E41)} .s-acc{stroke:var(--illo-accent,#7B6CF6)}
+  </style>
+
+  <circle class="soft" cx="200" cy="210" r="160"/>
+  <ellipse class="floor" cx="200" cy="372" rx="170" ry="10"/>
+  <rect class="acc" x="96" y="356" width="208" height="12" rx="6"/>
+
+  <!-- breathing arcs -->
+  <path class="s s-acc" stroke-width="3" opacity=".5" d="M84 150a70 70 0 0 1 40-62"/>
+  <path class="s s-acc" stroke-width="3" opacity=".3" d="M64 160a92 92 0 0 1 52-86"/>
+
+  <!-- plant -->
+  <path class="leaf" d="M330 356c-18-22-20-50-8-74 12 22 16 48 8 74z"/>
+  <path class="leaf" d="M332 356c4-28 18-48 40-58-2 26-18 46-40 58z"/>
+  <path class="acc2" d="M314 330h36l-5 26h-26z"/>
+
+  <!-- yogi -->
+  <path class="s s-ink" stroke-width="22" d="M192 212L190 282L190 346"/>
+  <path class="s s-ink" stroke-width="22" d="M210 212L262 248L212 276"/>
+  <ellipse class="ink" cx="190" cy="352" rx="17" ry="7"/>
+  <ellipse class="skin3" cx="204" cy="278" rx="10" ry="7"/>
+  <path class="s s-skin3" stroke-width="13" d="M185 150L166 98L196 50"/>
+  <path class="s s-skin3" stroke-width="13" d="M215 150L234 98L204 50"/>
+  <circle class="skin3" cx="200" cy="46" r="8"/>
+  <path class="acc2" d="M182 144c12-7 24-7 36 0l4 62c-14 6-30 6-44 0z"/>
+  <path class="ink" d="M176 200c16 6 32 6 48 0l2 16c-18 6-34 6-52 0z"/>
+  <rect class="skin3" x="193" y="124" width="14" height="22" rx="5"/>
+  <circle class="skin3" cx="200" cy="112" r="22"/>
+  <circle class="ink" cx="200" cy="84" r="11"/>
+  <path class="ink" d="M178 110c0-16 10-26 22-26s22 10 22 24c-6-8-14-11-22-11s-16 4-22 13z"/>
+</svg>
