@@ -53,7 +53,7 @@ body{
   font-family:var(--font); font-size:1rem; line-height:1.75; font-weight:400;
   -webkit-font-smoothing:antialiased;
 }
-html, body{overflow-x:clip}
+main{overflow-x:clip}  /* nothing may widen the page; kept off html/body so mobile browsers scroll the page normally */
 body.is-loading{overflow:hidden}
 img,svg,canvas{display:block; max-width:100%}
 a{color:inherit}
@@ -87,7 +87,7 @@ p{margin:0 0 1em; max-width:64ch}
 
 /* ---------- Loader ---------- */
 .loader{
-  position:fixed; inset:0; z-index:100; background:var(--grad);
+  position:fixed; top:0; left:0; width:100%; height:100vh; height:100dvh; z-index:100; background:var(--grad);
   display:grid; place-items:center; transition:opacity .5s ease, visibility .5s;
   animation:loader-out .01s 5s forwards; /* safety net if JS never runs */
 }
@@ -119,7 +119,7 @@ p{margin:0 0 1em; max-width:64ch}
 .progress span{display:block; height:100%; width:100%; background:var(--grad-warm); transform-origin:0 50%; transform:scaleX(var(--p, 0))}
 
 /* ---------- Nav ---------- */
-header.nav{position:fixed; top:0; left:0; right:0; z-index:20; color:#fff; transform:translateZ(0); transition:background-color .15s, box-shadow .15s, color .15s}
+header.nav{position:fixed; top:0; left:0; right:0; z-index:20; color:#fff; transition:background-color .15s, box-shadow .15s, color .15s}
 header.nav.scrolled{background-color:rgba(255,255,255,.94); backdrop-filter:blur(12px); box-shadow:0 8px 30px -18px rgba(30,26,60,.35); color:var(--ink)}
 .nav .wrap{display:flex; align-items:center; justify-content:space-between; height:76px; gap:24px}
 .mark{display:flex; align-items:center; gap:8px; line-height:1; text-decoration:none; font-weight:700; font-size:1.35rem; letter-spacing:-.01em}
