@@ -1,10 +1,10 @@
 # Builds the site with `node build.js` and publishes dist/ to GitHub Pages
-# on every push to main. Can also be started by hand from the Actions tab.
+# on every push to master. Can also be started by hand from the Actions tab.
 name: Build and publish
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 # Least privilege: read the repo, publish to Pages, nothing else.
