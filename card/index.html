@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sharry, Personal Trainer at Fitnex | Digital Business Card</title>
 <meta name="description" content="Digital business card of Sharry, personal trainer and strength coach at Fitnex. Email, contact form and website. Save the contact in one tap.">
 <meta name="author" content="Fitnex">
@@ -11,6 +11,13 @@
 <link rel="canonical" href="https://fitnex.at/card/">
 <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+
+<!-- Add to Home Screen: opens full screen like an app (manifest for Android/Chrome, meta tags for iPhone) -->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Fitnex">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <!-- Open Graph / social previews -->
 <meta property="og:type" content="profile">
@@ -94,7 +101,16 @@
       <button class="bcard-btn bcard-btn-soft" type="button" id="card-share">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5.5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="M8.2 10.8l7.6-4M8.2 13.2l7.6 4"/></svg>Share card
       </button>
+      <!-- shown only where installing is possible and the card isn't installed yet -->
+      <button class="bcard-btn bcard-btn-line" type="button" id="card-install" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 7.5v7M9 11.5l3 3 3-3"/></svg>Add to Home Screen
+      </button>
     </div>
+    <p class="bcard-ios-hint" id="card-ios-hint" hidden>
+      In Safari, tap <strong>Share</strong>
+      <svg viewBox="0 0 24 24" aria-label="the Share icon" role="img"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/></svg>
+      then <strong>Add to Home Screen</strong>.
+    </p>
 
   </article>
 

@@ -111,3 +111,16 @@ a{color:inherit}
 
 @media (max-width:360px){ .bcard-actions{grid-template-columns:1fr} }
 @media (prefers-reduced-motion: reduce){ .bcard-link, .bcard-btn{transition:none} }
+
+/* ---------- Add to Home Screen ---------- */
+.bcard-btn-line{grid-column:1 / -1; color:var(--violet-ink); background:#fff; box-shadow:inset 0 0 0 1.5px #D3CAF8}
+.bcard-btn-line:hover{background:var(--soft); transform:translateY(-1px)}
+.bcard-btn[hidden], .bcard-ios-hint[hidden]{display:none}
+.bcard-ios-hint{margin:12px 0 0; padding:10px 14px; border-radius:14px; background:var(--soft); font-size:.85rem; line-height:1.6}
+.bcard-ios-hint strong{color:var(--ink); font-weight:600}
+.bcard-ios-hint svg{display:inline-block; width:18px; height:18px; vertical-align:-3px; fill:none; stroke:var(--violet); stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+
+/* installed as an app: keep clear of the iPhone notch and home bar */
+@supports (padding:max(0px)){
+  .bcard{padding-top:max(76px, calc(env(safe-area-inset-top) + 64px)); padding-bottom:max(28px, env(safe-area-inset-bottom))}
+}

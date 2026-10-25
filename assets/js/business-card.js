@@ -82,7 +82,49 @@ window.fitnexCard = (() => {
       else if (result === 'copyFailed') toast('Couldn’t copy the link. Copy it from the address bar instead.', true);
     });
 
+    setupInstall();
     document.querySelectorAll('[data-year]').forEach(n => { n.textContent = new Date().getFullYear(); });
+  };
+
+  /* ---------- Add to Home Screen ----------
+     Android/Chrome: the browser hands us an install prompt we can trigger from our button.
+     iPhone/iPad: websites can't trigger installation, so the button shows Safari's steps instead. */
+  const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  let installPrompt = null;
+
+  const showInstall = show => {
+    const btn = document.getElementById('card-install');
+    if (btn) btn.hidden = !show || isStandalone();
+  };
+
+  // can fire before init runs, so listen right away
+  addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();          // use our button instead of Chrome's banner
+    installPrompt = e;
+    showInstall(true);
+  });
+  addEventListener('appinstalled', () => {
+    installPrompt = null;
+    showInstall(false);
+    toast('Added to your home screen.');
+  });
+
+  const setupInstall = () => {
+    const btn = document.getElementById('card-install');
+    const hint = document.getElementById('card-ios-hint');
+    if (!btn) return;
+    showInstall(!!installPrompt || isIOS);
+    btn.addEventListener('click', async () => {
+      if (installPrompt) {
+        installPrompt.prompt();
+        await installPrompt.userChoice.catch(() => {});
+        installPrompt = null;
+        showInstall(false);
+      } else if (hint) {
+        hint.hidden = !hint.hidden;
+      }
+    });
   };
 
   return { init, buildVCard };
