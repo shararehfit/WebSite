@@ -1,0 +1,283 @@
+{
+  "meta": {
+    "title": "Fitnex | Personal Training und Online-Fitnesscoaching mit Sharry",
+    "description": "Personal Training, Online-Coaching, Krafttraining in Kleingruppen und Ernährungscoaching mit Sharry bei Fitnex. Trainiere für Gesundheit. Fitness fürs Leben.",
+    "keywords": "Fitnex, Sharry, Personal Trainerin, Personal Training, Fitnesstrainerin, Fitnesscoach, Online-Coaching, Online Fitness Coaching, Krafttraining, Kleingruppentraining, Ernährungscoaching, Beweglichkeit, Mobility, Fitness Österreich, Personal Training Österreich",
+    "ogTitle": "Fitnex | Personal Training und Online-Fitnesscoaching",
+    "ogDescription": "Personal Training, Online-Coaching, Krafttraining in Kleingruppen und Ernährungscoaching mit Sharry. Trainiere für Gesundheit. Fitness fürs Leben.",
+    "twitterDescription": "Personal Training, Online-Coaching, Krafttraining in Kleingruppen und Ernährungscoaching mit Sharry.",
+    "ogImageAlt": "Fitnex-Logo mit dem Motto Train for Health. Fitness for Life."
+  },
+  "ld": {
+    "slogan": "Trainiere für Gesundheit. Fitness fürs Leben.",
+    "jobTitle": "Personal Trainerin und Kraftcoach",
+    "services": [
+      {
+        "name": "Personal Training",
+        "description": "Einzeltraining für Kraft und Fitness in einem Studio."
+      },
+      {
+        "name": "Online-Coaching",
+        "description": "Ein persönlicher Trainingsplan in einer App, mit wöchentlichem Check-in und Technik-Feedback per Video."
+      },
+      {
+        "name": "Krafttraining in Kleingruppen",
+        "description": "Betreutes Krafttraining für bis zu vier Personen."
+      },
+      {
+        "name": "Ernährungs- und Gewohnheitscoaching",
+        "description": "Einfache, nachhaltige Gewohnheiten rund um Eiweiß, Schlaf und Energie."
+      }
+    ],
+    "knowsAbout": [
+      "Personal Training",
+      "Krafttraining",
+      "Online-Fitnesscoaching",
+      "Beweglichkeit",
+      "Ausdauer",
+      "Ernährungscoaching",
+      "Training in und nach der Schwangerschaft"
+    ]
+  },
+  "ui": {
+    "backToTop": "Fitnex, zurück nach oben",
+    "home": "Fitnex, Startseite",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "menu": "Menü",
+    "mainNav": "Hauptmenü",
+    "mobileNav": "Mobiles Menü",
+    "langNav": "Sprache",
+    "langDe": "Deutsch",
+    "langEn": "English"
+  },
+  "loader": {
+    "label": "Wird geladen"
+  },
+  "nav": {
+    "about": "Über mich",
+    "services": "Angebot",
+    "how": "Ablauf",
+    "clients": "Erfolge",
+    "faq": "FAQ",
+    "contact": "Schreib mir"
+  },
+  "hero": {
+    "h1": "Fitnex: Personal Training und Online-Fitnesscoaching mit Sharry.",
+    "lede": "<strong>Kraftcoach, vor Ort und online.</strong> Ich helfe dir, dich in deinem Körper stark und sicher zu fühlen. Wir starten dort, wo du gerade stehst, und bauen darauf auf.",
+    "seeServices": "Angebot ansehen",
+    "art": "Illustration einer Trainerin mit Kettlebell"
+  },
+  "about": {
+    "art": "Illustration einer Trainerin mit Klemmbrett, die winkt",
+    "title": "Hi, ich bin Sharry.",
+    "lede": "Mit dem Krafttraining habe ich angefangen, um ein schweres Jahr zu überstehen. Dabei habe ich gemerkt, dass Stärke viel mehr verändert als nur den Körper. Heute helfe ich anderen, genau dieses Gefühl zu finden.",
+    "body": "Meine Kundinnen und Kunden haben viel um die Ohren. Manche starten nach einer Verletzung oder Schwangerschaft wieder durch, manche wollen ihr erstes richtiges Gewicht heben, andere einfach nicht mehr so steif sein. Alle wollen einen Plan, der Sinn ergibt, und jemanden an ihrer Seite, der auch die kleinen Erfolge sieht.",
+    "creds": [
+      {
+        "title": "Personal Trainerin (Level 3)",
+        "text": "Zertifiziert, versichert und in Erster Hilfe geschult"
+      },
+      {
+        "title": "Kraft & Kondition",
+        "text": "Spezialistin für Langhantel und Kettlebell"
+      },
+      {
+        "title": "Prä- & postnatal",
+        "text": "Training während und nach der Schwangerschaft"
+      },
+      {
+        "title": "8 Jahre Coaching",
+        "text": "Über 300 Kundinnen und Kunden trainiert"
+      }
+    ],
+    "rulesTitle": "So coache ich",
+    "rules": [
+      "Technik vor Gewicht. Jede Wiederholung ist Übung.",
+      "Fortschritt, den du messen kannst, statt Quälerei, die du spürst.",
+      "Das Training passt sich deinem Leben an. Nicht umgekehrt."
+    ]
+  },
+  "services": {
+    "title": "So kannst du mit mir trainieren",
+    "intro": "Wähl eine Variante oder kombinier sie. Die meisten starten mit Personal Training und wechseln später ins Online-Coaching.",
+    "items": [
+      {
+        "title": "Personal Training",
+        "text": "Einzeltraining in einem privaten Studio. Volle Aufmerksamkeit für deine Technik, dein Tempo und deine Ziele.",
+        "meta": [
+          "60 Minuten",
+          "1 bis 3 Mal pro Woche",
+          "Pakete mit 8 oder 12 Einheiten"
+        ],
+        "more": "Frag nach Personal Training"
+      },
+      {
+        "title": "Online-Coaching",
+        "text": "Dein Trainingsplan in einer App, egal wo du trainierst. Ich schaue mir deine Übungen per Video an und passe den Plan jede Woche an.",
+        "meta": [
+          "Monatlich",
+          "Trainiere überall",
+          "Wöchentlicher Check-in"
+        ],
+        "more": "Frag nach Online-Coaching"
+      },
+      {
+        "title": "Krafttraining in Kleingruppen",
+        "text": "Bis zu vier Personen, ein Coach. Betreut wie im Personal Training, mit der Energie einer Gruppe.",
+        "meta": [
+          "Max. 4 Personen",
+          "45 Minuten",
+          "Morgens und abends"
+        ],
+        "more": "Frag nach Kleingruppen"
+      },
+      {
+        "title": "Ernährung & Gewohnheiten",
+        "text": "Keine Diätpläne und keine verbotenen Lebensmittel. Wir bauen ein paar einfache Gewohnheiten rund um Eiweiß, Schlaf und Energie auf.",
+        "meta": [
+          "6-Wochen-Kurs",
+          "Zu jedem Angebot buchbar",
+          "Check-in alle zwei Wochen"
+        ],
+        "more": "Frag nach Ernährungscoaching"
+      }
+    ]
+  },
+  "focus": {
+    "title": "Daran arbeiten wir gemeinsam",
+    "items": [
+      {
+        "title": "Kraft",
+        "text": "Beugen, Heben, Drücken, Ziehen und Tragen. Die Grundbewegungen, die deinen Alltag leichter machen.",
+        "art": "Illustration einer Person, die eine Langhantel über den Kopf drückt"
+      },
+      {
+        "title": "Beweglichkeit",
+        "text": "Bewegungsfreiheit, die du wirklich nutzen kannst. Wir lösen steife Hüften, Schultern und Rücken und machen diesen Bewegungsumfang stark.",
+        "art": "Illustration einer Person in der Baum-Pose auf einer Matte"
+      },
+      {
+        "title": "Ausdauer",
+        "text": "Fitness, die bleibt. Kurze, strukturierte Intervalle, damit du dich schneller erholst.",
+        "art": "Illustration einer Person beim Seilspringen"
+      }
+    ]
+  },
+  "process": {
+    "title": "So läuft’s ab",
+    "steps": [
+      {
+        "title": "Melde dich",
+        "text": "Schreib mir über deine Ziele, deine Vorgeschichte und deinen Alltag. Ganz unverbindlich."
+      },
+      {
+        "title": "Bestandsaufnahme",
+        "text": "Wir schauen, wie du dich bewegst, wo du stark bist und worauf wir achten müssen. Das ist deine Startlinie."
+      },
+      {
+        "title": "Dein Plan",
+        "text": "Ein Programm, das für dich geschrieben ist, mit Einheiten, die in deine echte freie Zeit passen."
+      },
+      {
+        "title": "Trainieren & überprüfen",
+        "text": "Wir trainieren, besprechen jede Woche den Stand und testen alle sechs Wochen neu. Deinen Fortschritt siehst du schwarz auf weiß."
+      }
+    ]
+  },
+  "clients": {
+    "title": "Kleine Erfolge, festgehalten",
+    "quotes": [
+      {
+        "win": "Erster Klimmzug ohne Hilfe, mit 47.",
+        "quote": "„Ich war immer überzeugt, einfach kein starker Mensch zu sein. Sharry hat mir nie das Gefühl gegeben, Anfängerin zu sein, obwohl ich es definitiv war.“",
+        "initial": "M",
+        "name": "Maria K., Personal Training"
+      },
+      {
+        "win": "Nach 10 Wochen keine Rückenschmerzen mehr.",
+        "quote": "„Das Technik-Feedback per Video ist das Beste. Sie sieht Dinge, die mir nie auffallen würden.“",
+        "initial": "D",
+        "name": "Daniel R., Online-Coaching"
+      },
+      {
+        "win": "Nach dem zweiten Baby zurück im Gym.",
+        "quote": "„Sie wusste genau, was wir machen können und womit wir noch warten.“",
+        "initial": "L",
+        "name": "Leila S., Postnatal-Programm"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "items": [
+      {
+        "q": "Ich habe noch nie trainiert. Ist das okay?",
+        "a": "Ja, und das ist einer meiner liebsten Startpunkte. Wir lernen jede Bewegung sauber, bevor Gewicht dazukommt."
+      },
+      {
+        "q": "Wo findet das Training statt?",
+        "a": "Das Training vor Ort findet in einem Studio statt, das ich organisiere. Online trainierst du dort, wo es für dich passt, im Gym oder zu Hause, mit wenig Equipment."
+      },
+      {
+        "q": "Muss ich meine Ernährung umstellen?",
+        "a": "Nur wenn du willst. Wenn ja, setzt das Ernährungscoaching auf einfache Gewohnheiten statt auf Diätpläne oder Kalorienzählen."
+      },
+      {
+        "q": "Kann ich kündigen?",
+        "a": "Ja. Du kannst zum Ende deines aktuell gebuchten Zeitraums kündigen, wenn du mir rechtzeitig Bescheid gibst."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Lass uns über deine erste Wiederholung reden.",
+    "intro": "Schreib mir eine Nachricht. Erzähl mir kurz, was du dir wünschst, und ich melde mich innerhalb von drei Werktagen.",
+    "prefer": "Lieber per E-Mail?",
+    "nameLabel": "Dein Name",
+    "nameErr": "Gib deinen Namen ein, damit ich weiß, mit wem ich schreibe.",
+    "emailLabel": "E-Mail",
+    "emailErr": "Gib eine E-Mail-Adresse wie name@beispiel.at ein.",
+    "goalLabel": "Ich interessiere mich für",
+    "goals": {
+      "pt": "Personal Training",
+      "on": "Online-Coaching",
+      "gr": "Krafttraining in Kleingruppen",
+      "nu": "Ernährung & Gewohnheiten",
+      "unsure": "Weiß ich noch nicht"
+    },
+    "msgLabel": "Woran möchtest du arbeiten?",
+    "msgPlaceholder": "Zum Beispiel: Ich möchte mich stärker fühlen, wenn ich meine Kinder hochhebe, und mein unterer Rücken tut oft weh.",
+    "submit": "Nachricht senden",
+    "errorBefore": "Deine Nachricht konnte nicht gesendet werden. Versuch es noch einmal oder schreib an",
+    "noteBefore": "Deine Daten werden nur verwendet, um dir zu antworten. Mehr dazu in der",
+    "noteLink": "Datenschutzerklärung",
+    "noteAfter": ".",
+    "sentTitle": "Nachricht gesendet",
+    "sentText": "Danke! Sharry antwortet dir innerhalb von drei Werktagen per E-Mail.",
+    "formSubject": "Neue Nachricht über die Fitnex-Website",
+    "fromName": "Fitnex-Website"
+  },
+  "footer": {
+    "card": "Visitenkarte",
+    "privacy": "Datenschutz",
+    "top": "Nach oben",
+    "back": "Zurück zur Website"
+  },
+  "js": {
+    "phrases": [
+      "Fitnex",
+      "Trainiere für Gesundheit. Fitness fürs Leben.",
+      "Besser bewegen. Besser fühlen. Besser leben.",
+      "Starker Körper. Gesunder Geist.",
+      "Fitness heute. Gesundheit fürs Leben.",
+      "Jeden Tag stärker."
+    ],
+    "sending": "Wird gesendet…",
+    "send": "Nachricht senden",
+    "subjectPrefix": "Neue Nachricht über die Fitnex-Website"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung | Fitnex",
+    "description": "Wie Fitnex mit deinen personenbezogenen Daten umgeht: Hosting, Schriftarten, Kontaktformular und deine Rechte nach der DSGVO."
+  }
+}

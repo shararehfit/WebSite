@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="{{ page.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ privacy.title }}</title>
+<meta name="description" content="{{ privacy.description }}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ page.url }}">
+<link rel="alternate" hreflang="de" href="{{ page.urlDe }}">
+<link rel="alternate" hreflang="en" href="{{ page.urlEn }}">
+<link rel="alternate" hreflang="x-default" href="{{ page.urlDefault }}">
+<link rel="apple-touch-icon" href="{{ page.base }}assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fitnex">
+<meta property="og:locale" content="{{ page.ogLocale }}">
+<meta property="og:title" content="{{ privacy.title }}">
+<meta property="og:url" content="{{ page.url }}">
+<meta property="og:image" content="https://fitnex.at/assets/img/og-image.png">
+<meta name="theme-color" content="#8E8FFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="{{ page.base }}assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="{{ page.base }}assets/css/style.css">
+<script defer src="{{ page.base }}assets/js/site.js"></script>
+</head>
+<body class="legal-page">
+
+<header class="nav scrolled" id="top">
+  <div class="wrap">
+    <a class="mark" href="{{ page.homeHref }}" aria-label="{{ ui.home }}"><svg class="logo" viewBox="8 5 48 56" aria-hidden="true"><circle class="logo-head" cx="32" cy="13" r="7"/><path class="logo-body" d="M12 22l20 16 20-16M32 38v19"/></svg>Fitnex</a>
+    <div class="nav-end">
+      <nav class="lang lang-legal" aria-label="{{ ui.langNav }}">
+        <a href="{{ page.hrefDe }}" hreflang="de" lang="de" aria-current="{{ page.currentDe }}" title="{{ ui.langDe }}">DE</a>
+        <a href="{{ page.hrefEn }}" hreflang="en" lang="en" aria-current="{{ page.currentEn }}" title="{{ ui.langEn }}">EN</a>
+      </nav>
+      <a class="btn btn-small" href="{{ page.homeHref }}">{{ footer.back }}</a>
+    </div>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="wrap">
+{{{ content }}}
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Fitnex</span>
+    <ul>
+      <li><a href="{{ page.cardHref }}">{{ footer.card }}</a></li>
+      <li><a href="{{ page.privacyHref }}">{{ footer.privacy }}</a></li>
+      <li><a href="{{ page.homeHref }}">{{ footer.back }}</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -9,7 +9,10 @@
   const wait = ms => new Promise(r => setTimeout(r, ms));
   document.documentElement.classList.add('js');
 
-  /* ---------- Loader: at least two seconds, and until Poppins is in ---------- */
+  /* ---------- Loader: on first arrival only, for at least two seconds and until Poppins is in.
+     Coming from another Fitnex page (language switch, privacy page) skips it; the check runs
+     in the page head, which adds .skip-loader before anything is drawn. Nothing is stored. ---------- */
+  const skipLoader = document.documentElement.classList.contains('skip-loader');
   const fontsReady = Promise.race([
     Promise.all([
       document.fonts.load('700 100px Poppins'),
@@ -18,23 +21,22 @@
     wait(2500),
   ]);
 
-  Promise.all([wait(2000), fontsReady]).then(() => {
+  Promise.all([wait(skipLoader ? 0 : 2000), fontsReady]).then(() => {
     const loader = document.getElementById('loader');
-    loader.classList.add('is-done');
+    if (loader) {
+      loader.classList.add('is-done');
+      if (skipLoader) loader.remove();
+      else loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+    }
     document.body.classList.remove('is-loading');
-    loader.addEventListener('transitionend', () => loader.remove(), { once: true });
     startHero();
   });
 
+  /* ---------- Page texts: the build writes them into <script id="i18n"> per language ---------- */
+  const T = JSON.parse(document.getElementById('i18n')?.textContent || '{}');
+
   /* ---------- Hero: vapour text in the left column, drifting across the hero ---------- */
-  const PHRASES = [
-    'Fitnex',
-    'Train for Health. Fitness for Life.',
-    'Move Better. Feel Better. Live Better.',
-    'Strong Body. Healthy Mind.',
-    'Fitness Today. Health for Life.',
-    'Stronger Every Day.',
-  ];
+  const PHRASES = T.phrases || ['Fitnex'];
 
   function startHero() {
     const canvas = document.getElementById('vapour');
@@ -119,6 +121,11 @@
   });
   matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) closeMenu(false); });
 
+  /* ---------- Language switch keeps your place: #faq in German opens #faq in English ---------- */
+  document.querySelectorAll('[data-lang-switch]').forEach(a => a.addEventListener('click', () => {
+    if (location.hash && a.getAttribute('aria-current') !== 'page') a.hash = location.hash;
+  }));
+
   /* ---------- Title and "Back to top" links scroll to the top ---------- */
   document.querySelectorAll('a[href="#top"]').forEach(a => a.addEventListener('click', e => {
     e.preventDefault();
@@ -192,10 +199,10 @@
     const data = Object.fromEntries(new FormData(form));
     const interest = form.goal.options[form.goal.selectedIndex].text;
     data.goal = interest;                                   // readable label, not the internal value
-    data.subject = `New message from the Fitnex website: ${interest}`;
+    data.subject = `${T.subjectPrefix || "New message from the Fitnex website"}: ${interest}`;
 
     submit.disabled = true;
-    submit.textContent = 'Sending…';
+    submit.textContent = T.sending || 'Sending…';
     try {
       const res = await fetch(form.action, {
         method: 'POST',
@@ -210,7 +217,7 @@
       failure.hidden = false;
     } finally {
       submit.disabled = false;
-      submit.textContent = 'Send message';
+      submit.textContent = T.send || 'Send message';
     }
   });
 })();

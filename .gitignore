@@ -14,3 +14,6 @@ desktop.ini
 # Logs and dependencies, if a build step is ever added
 *.log
 node_modules/
+
+# Build output (created by node build.js, published by GitHub Actions)
+dist/

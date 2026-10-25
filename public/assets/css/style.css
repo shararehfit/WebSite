@@ -55,6 +55,8 @@ body{
 }
 main{overflow-x:clip}  /* nothing may widen the page; kept off html/body so mobile browsers scroll the page normally */
 body.is-loading{overflow:hidden}
+.skip-loader .loader{display:none}            /* coming from another Fitnex page */
+.skip-loader body.is-loading{overflow:visible}
 img,svg,canvas{display:block; max-width:100%}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--violet); outline-offset:3px; border-radius:4px}
@@ -163,11 +165,11 @@ header.nav.scrolled{background-color:rgba(255,255,255,.94); backdrop-filter:blur
 .drawer-head{display:flex; align-items:center; justify-content:space-between; height:76px; flex:none}
 .drawer-close{width:44px; height:44px; display:grid; place-items:center; border:0; border-radius:50%; background:var(--soft-2); cursor:pointer; color:var(--ink)}
 .drawer-close svg{width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round}
-.drawer nav{flex:1; display:flex; align-items:center; padding:24px 0}
+.drawer > nav{flex:1; display:flex; align-items:center; padding:24px 0}
 .drawer ul{list-style:none; margin:0; padding:0; width:100%}
 .drawer li{border-bottom:1px solid var(--line)}
-.drawer nav a{display:block; padding:14px 0; text-decoration:none; font-weight:600; font-size:1.6rem; line-height:1.2; transition:color .2s, padding-left .25s}
-.drawer nav a:hover, .drawer nav a:focus-visible{color:var(--violet); padding-left:8px}
+.drawer > nav a{display:block; padding:14px 0; text-decoration:none; font-weight:600; font-size:1.6rem; line-height:1.2; transition:color .2s, padding-left .25s}
+.drawer > nav a:hover, .drawer > nav a:focus-visible{color:var(--violet); padding-left:8px}
 .drawer-foot{flex:none}
 .drawer-foot .btn{width:100%}
 .drawer-foot p{margin:18px 0 0; font-size:.95rem; line-height:1.8; color:var(--body)}
@@ -399,3 +401,16 @@ footer ul{display:flex; gap:20px; list-style:none; margin:0; padding:0}
 .legal-text a{color:var(--violet-ink); text-underline-offset:3px}
 .legal-date{font-size:.92rem}
 .legal-address{color:var(--ink); line-height:1.9}
+/* ---------- Language switcher (DE | EN) ---------- */
+.lang{display:flex; align-items:center; gap:2px; font-size:.82rem; font-weight:600; letter-spacing:.02em}
+.lang a{text-decoration:none; padding:6px 9px; border-radius:999px; opacity:.72; transition:opacity .2s, background-color .2s}
+.lang a:hover{opacity:1}
+.lang a[aria-current="page"]{opacity:1; background:rgba(255,255,255,.22)}
+.nav.scrolled .lang a[aria-current="page"]{background:var(--soft-2); color:var(--violet-ink)}
+/* phones: the header has no room, the switcher lives in the menu instead */
+@media (max-width:900px){ .nav-end > .lang:not(.lang-legal){display:none} }
+/* in the menu: a compact DE | EN toggle next to the close button */
+.drawer-tools{display:flex; align-items:center; gap:10px}
+.lang-drawer{gap:0; padding:3px; border-radius:999px; background:var(--soft-2)}
+.lang-drawer a{min-width:38px; text-align:center; padding:7px 10px; opacity:1; color:var(--body)}
+.lang-drawer a[aria-current="page"]{background:#fff; color:var(--violet-ink); box-shadow:0 2px 6px -2px rgba(76,60,170,.35)}

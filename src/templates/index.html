@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="{{ page.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ meta.title }}</title>
+<meta name="description" content="{{ meta.description }}">
+<meta name="keywords" content="{{ meta.keywords }}">
+<meta name="author" content="Fitnex">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#8E8FFF">
+<link rel="canonical" href="{{ page.url }}">
+<link rel="alternate" hreflang="de" href="{{ page.urlDe }}">
+<link rel="alternate" hreflang="en" href="{{ page.urlEn }}">
+<link rel="alternate" hreflang="x-default" href="{{ page.urlDefault }}">
+<link rel="apple-touch-icon" href="{{ page.base }}assets/img/apple-touch-icon.png">
+
+<!-- Open Graph / social previews -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fitnex">
+<meta property="og:locale" content="{{ page.ogLocale }}">
+<meta property="og:locale:alternate" content="{{ page.ogLocaleAlt }}">
+<meta property="og:url" content="{{ page.url }}">
+<meta property="og:title" content="{{ meta.ogTitle }}">
+<meta property="og:description" content="{{ meta.ogDescription }}">
+<meta property="og:image" content="https://fitnex.at/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ meta.ogImageAlt }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta.ogTitle }}">
+<meta name="twitter:description" content="{{ meta.twitterDescription }}">
+<meta name="twitter:image" content="https://fitnex.at/assets/img/og-image.png">
+<meta name="twitter:image:alt" content="{{ meta.ogImageAlt }}">
+
+<!-- Structured data (Google rich results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://fitnex.at/#website",
+      "url": "https://fitnex.at/",
+      "name": "Fitnex",
+      "inLanguage": ["de", "en"],
+      "publisher": { "@id": "https://fitnex.at/#org" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": {{ json page.url }},
+      "url": {{ json page.url }},
+      "name": {{ json meta.title }},
+      "inLanguage": {{ json page.lang }},
+      "isPartOf": { "@id": "https://fitnex.at/#website" },
+      "about": { "@id": "https://fitnex.at/#org" },
+      "primaryImageOfPage": "https://fitnex.at/assets/img/og-image.png"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://fitnex.at/#org",
+      "name": "Fitnex",
+      "url": "https://fitnex.at/",
+      "logo": "https://fitnex.at/assets/img/logo-512.png",
+      "email": "sharareh.fit@gmail.com",
+      "slogan": {{ json ld.slogan }},
+      "areaServed": { "@type": "Country", "name": "Austria" },
+      "employee": { "@id": "https://fitnex.at/#coach" },
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": {{ json ld.services.0.name }}, "description": {{ json ld.services.0.description }} } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": {{ json ld.services.1.name }}, "description": {{ json ld.services.1.description }} } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": {{ json ld.services.2.name }}, "description": {{ json ld.services.2.description }} } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": {{ json ld.services.3.name }}, "description": {{ json ld.services.3.description }} } }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://fitnex.at/#coach",
+      "name": "Sharry",
+      "jobTitle": {{ json ld.jobTitle }},
+      "worksFor": { "@id": "https://fitnex.at/#org" },
+      "email": "mailto:sharareh.fit@gmail.com",
+      "url": "https://fitnex.at/card/",
+      "knowsAbout": {{ json ld.knowsAbout }}
+    }
+  ]
+}
+</script>
+<!-- Show the loader only on first arrival: skip it when coming from another Fitnex page. Stores nothing. -->
+<script>try{if(document.referrer&&new URL(document.referrer).origin===location.origin)document.documentElement.classList.add('skip-loader')}catch(e){}</script>
+<!-- Texts the scripts need (mottos, form states) -->
+<script id="i18n" type="application/json">{{ json js }}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="{{ page.base }}assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="{{ page.base }}assets/css/style.css">
+<noscript><style>.loader{display:none} body.is-loading{overflow:auto}</style></noscript>
+<script defer src="{{ page.base }}assets/js/vapour-text.js"></script>
+<script defer src="{{ page.base }}assets/js/main.js"></script>
+<script defer src="{{ page.base }}assets/js/site.js"></script>
+</head>
+<body class="is-loading">
+
+<div class="loader" id="loader" role="status" aria-label="{{ loader.label }}">
+  <!-- the "i" is a dotless ı; its bouncing dot is drawn in CSS -->
+  <span class="loader-text" aria-hidden="true">Load<span class="loader-i">ı</span>ng</span>
+</div>
+
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<header class="nav" id="top">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="{{ ui.backToTop }}"><svg class="logo" viewBox="8 5 48 56" aria-hidden="true"><circle class="logo-head" cx="32" cy="13" r="7"/><path class="logo-body" d="M12 22l20 16 20-16M32 38v19"/></svg>Fitnex</a>
+    <nav aria-label="{{ ui.mainNav }}">
+      <ul>
+        <li><a href="#about">{{ nav.about }}</a></li>
+        <li><a href="#services">{{ nav.services }}</a></li>
+        <li><a href="#how">{{ nav.how }}</a></li>
+        <li><a href="#clients">{{ nav.clients }}</a></li>
+        <li><a href="#faq">{{ nav.faq }}</a></li>
+      </ul>
+    </nav>
+    <div class="nav-end">
+      <nav class="lang" aria-label="{{ ui.langNav }}">
+        <a href="{{ page.hrefDe }}" hreflang="de" lang="de" aria-current="{{ page.currentDe }}" title="{{ ui.langDe }}" data-lang-switch>DE</a>
+        <a href="{{ page.hrefEn }}" hreflang="en" lang="en" aria-current="{{ page.currentEn }}" title="{{ ui.langEn }}" data-lang-switch>EN</a>
+      </nav>
+      <a class="btn btn-small" href="#contact">{{ nav.contact }}</a>
+      <button class="menu-toggle" type="button" aria-controls="drawer" aria-expanded="false" aria-label="{{ ui.openMenu }}">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu: slides in over the page -->
+<div class="drawer-backdrop" data-close-menu></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="{{ ui.menu }}">
+  <div class="drawer-head">
+    <a class="mark" href="#top" aria-label="{{ ui.backToTop }}" data-close-menu><svg class="logo" viewBox="8 5 48 56" aria-hidden="true"><circle class="logo-head" cx="32" cy="13" r="7"/><path class="logo-body" d="M12 22l20 16 20-16M32 38v19"/></svg>Fitnex</a>
+    <div class="drawer-tools">
+      <nav class="lang lang-drawer" aria-label="{{ ui.langNav }}">
+        <a href="{{ page.hrefDe }}" hreflang="de" lang="de" aria-current="{{ page.currentDe }}" title="{{ ui.langDe }}" data-lang-switch>DE</a>
+        <a href="{{ page.hrefEn }}" hreflang="en" lang="en" aria-current="{{ page.currentEn }}" title="{{ ui.langEn }}" data-lang-switch>EN</a>
+      </nav>
+      <button class="drawer-close" type="button" aria-label="{{ ui.closeMenu }}" data-close-menu>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav aria-label="{{ ui.mobileNav }}">
+    <ul>
+      <li><a href="#about" data-close-menu>{{ nav.about }}</a></li>
+      <li><a href="#services" data-close-menu>{{ nav.services }}</a></li>
+      <li><a href="#how" data-close-menu>{{ nav.how }}</a></li>
+      <li><a href="#clients" data-close-menu>{{ nav.clients }}</a></li>
+      <li><a href="#faq" data-close-menu>{{ nav.faq }}</a></li>
+    </ul>
+  </nav>
+  <div class="drawer-foot">
+    <a class="btn" href="#contact" data-close-menu>{{ nav.contact }}</a>
+    <p><a href="mailto:sharareh.fit@gmail.com">sharareh.fit@gmail.com</a></p>
+  </div>
+</aside>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="vapour" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 class="sr-only">{{ hero.h1 }} <span id="phrase-now"></span></h1>
+        <div class="vapour-slot" id="vapour-slot"></div>
+        <p class="lede">{{{ hero.lede }}}</p>
+        <div class="actions">
+          <a class="btn btn-white" href="#contact">{{ nav.contact }}</a>
+          <a class="btn btn-outline" href="#services">{{ hero.seeServices }}</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="illo" data-illo="{{ page.base }}assets/img/hero.svg" role="img" aria-label="{{ hero.art }}"></div>
+      </div>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 64c180 40 360 56 560 40S960 20 1160 28s240 30 280 40v52H0z"/></svg>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <figure class="about-art">
+        <div class="illo" data-illo="{{ page.base }}assets/img/about.svg" role="img" aria-label="{{ about.art }}"></div>
+      </figure>
+      <div class="intro">
+        <h2>{{ about.title }}</h2>
+        <p class="lede">{{ about.lede }}</p>
+        <p>{{ about.body }}</p>
+        <ul class="creds">
+          <li><strong>{{ about.creds.0.title }}</strong>{{ about.creds.0.text }}</li>
+          <li><strong>{{ about.creds.1.title }}</strong>{{ about.creds.1.text }}</li>
+          <li><strong>{{ about.creds.2.title }}</strong>{{ about.creds.2.text }}</li>
+          <li><strong>{{ about.creds.3.title }}</strong>{{ about.creds.3.text }}</li>
+        </ul>
+        <div class="rules">
+          <h3>{{ about.rulesTitle }}</h3>
+          <ol>
+            <li>{{ about.rules.0 }}</li>
+            <li>{{ about.rules.1 }}</li>
+            <li>{{ about.rules.2 }}</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <header class="section-head">
+        <h2>{{ services.title }}</h2>
+        <p>{{ services.intro }}</p>
+      </header>
+      <div class="service-grid">
+        <article class="service">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg></span>
+          <h3>{{ services.items.0.title }}</h3>
+          <p>{{ services.items.0.text }}</p>
+          <ul class="meta"><li>{{ services.items.0.meta.0 }}</li><li>{{ services.items.0.meta.1 }}</li><li>{{ services.items.0.meta.2 }}</li></ul>
+          <a class="more" href="#contact" data-goal="pt">{{ services.items.0.more }}</a>
+        </article>
+        <article class="service">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span>
+          <h3>{{ services.items.1.title }}</h3>
+          <p>{{ services.items.1.text }}</p>
+          <ul class="meta"><li>{{ services.items.1.meta.0 }}</li><li>{{ services.items.1.meta.1 }}</li><li>{{ services.items.1.meta.2 }}</li></ul>
+          <a class="more" href="#contact" data-goal="on">{{ services.items.1.more }}</a>
+        </article>
+        <article class="service">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.5"/><path d="M3.5 19c.6-3.4 2.8-5 5.5-5s4.9 1.6 5.5 5M14.5 14.6c.8-.4 1.6-.6 2.5-.6 2.2 0 3.8 1.3 4.3 4"/></svg></span>
+          <h3>{{ services.items.2.title }}</h3>
+          <p>{{ services.items.2.text }}</p>
+          <ul class="meta"><li>{{ services.items.2.meta.0 }}</li><li>{{ services.items.2.meta.1 }}</li><li>{{ services.items.2.meta.2 }}</li></ul>
+          <a class="more" href="#contact" data-goal="gr">{{ services.items.2.more }}</a>
+        </article>
+        <article class="service">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 7c-1.2-1.3-3-1.8-4.6-1.2C4.6 6.8 4 10.2 5.2 13.6 6.3 16.8 8.4 20 10.6 20c.6 0 .9-.3 1.4-.3s.8.3 1.4.3c2.2 0 4.3-3.2 5.4-6.4 1.2-3.4.6-6.8-2.2-7.8C15 5.2 13.2 5.7 12 7z"/><path d="M12 7c0-2 1-3.5 3-4.5"/></svg></span>
+          <h3>{{ services.items.3.title }}</h3>
+          <p>{{ services.items.3.text }}</p>
+          <ul class="meta"><li>{{ services.items.3.meta.0 }}</li><li>{{ services.items.3.meta.1 }}</li><li>{{ services.items.3.meta.2 }}</li></ul>
+          <a class="more" href="#contact" data-goal="nu">{{ services.items.3.more }}</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS AREAS -->
+  <section class="focus">
+    <div class="wrap">
+      <header class="section-head">
+        <h2>{{ focus.title }}</h2>
+      </header>
+      <div class="art-grid">
+        <figure class="art">
+          <div class="art-frame"><div class="illo" data-illo="{{ page.base }}assets/img/strength.svg" role="img" aria-label="{{ focus.items.0.art }}"></div></div>
+          <figcaption><h3>{{ focus.items.0.title }}</h3><p>{{ focus.items.0.text }}</p></figcaption>
+        </figure>
+        <figure class="art">
+          <div class="art-frame"><div class="illo" data-illo="{{ page.base }}assets/img/mobility.svg" role="img" aria-label="{{ focus.items.1.art }}"></div></div>
+          <figcaption><h3>{{ focus.items.1.title }}</h3><p>{{ focus.items.1.text }}</p></figcaption>
+        </figure>
+        <figure class="art">
+          <div class="art-frame"><div class="illo" data-illo="{{ page.base }}assets/img/conditioning.svg" role="img" aria-label="{{ focus.items.2.art }}"></div></div>
+          <figcaption><h3>{{ focus.items.2.title }}</h3><p>{{ focus.items.2.text }}</p></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="how">
+    <div class="wrap">
+      <header class="section-head">
+        <h2>{{ process.title }}</h2>
+      </header>
+      <ol class="steps">
+        <li><h3>{{ process.steps.0.title }}</h3><p>{{ process.steps.0.text }}</p></li>
+        <li><h3>{{ process.steps.1.title }}</h3><p>{{ process.steps.1.text }}</p></li>
+        <li><h3>{{ process.steps.2.title }}</h3><p>{{ process.steps.2.text }}</p></li>
+        <li><h3>{{ process.steps.3.title }}</h3><p>{{ process.steps.3.text }}</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="clients" id="clients">
+    <div class="wrap">
+      <header class="section-head">
+        <h2>{{ clients.title }}</h2>
+      </header>
+      <div class="quotes">
+        <figure class="quote">
+          <p class="win">{{ clients.quotes.0.win }}</p>
+          <blockquote>{{ clients.quotes.0.quote }}</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">{{ clients.quotes.0.initial }}</span>{{ clients.quotes.0.name }}</figcaption>
+        </figure>
+        <figure class="quote">
+          <p class="win">{{ clients.quotes.1.win }}</p>
+          <blockquote>{{ clients.quotes.1.quote }}</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">{{ clients.quotes.1.initial }}</span>{{ clients.quotes.1.name }}</figcaption>
+        </figure>
+        <figure class="quote">
+          <p class="win">{{ clients.quotes.2.win }}</p>
+          <blockquote>{{ clients.quotes.2.quote }}</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">{{ clients.quotes.2.initial }}</span>{{ clients.quotes.2.name }}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <h2>{{ faq.title }}</h2>
+      <div class="faq-list">
+        <details open>
+          <summary>{{ faq.items.0.q }}</summary>
+          <p>{{ faq.items.0.a }}</p>
+        </details>
+        <details>
+          <summary>{{ faq.items.1.q }}</summary>
+          <p>{{ faq.items.1.a }}</p>
+        </details>
+        <details>
+          <summary>{{ faq.items.2.q }}</summary>
+          <p>{{ faq.items.2.a }}</p>
+        </details>
+        <details>
+          <summary>{{ faq.items.3.q }}</summary>
+          <p>{{ faq.items.3.a }}</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-card">
+        <div class="contact-copy">
+          <h2>{{ contact.title }}</h2>
+          <p>{{ contact.intro }}</p>
+          <p>{{ contact.prefer }} <a href="mailto:sharareh.fit@gmail.com">sharareh.fit@gmail.com</a></p>
+        </div>
+        <div>
+          <form id="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <!-- Web3Forms delivers messages to Sharry's inbox. The key is public by design: it can only send to that address. -->
+            <input type="hidden" name="access_key" value="c6395ac0-49af-49a0-b707-71c9149f3cc7">
+            <input type="hidden" name="subject" value="{{ contact.formSubject }}">
+            <input type="hidden" name="from_name" value="{{ contact.fromName }}">
+            <input type="hidden" name="language" value="{{ page.lang }}">
+            <!-- spam trap: hidden from people, bots tick it -->
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="row">
+              <div class="field"><label for="f-name">{{ contact.nameLabel }}</label><input id="f-name" name="name" autocomplete="name" required><p class="err">{{ contact.nameErr }}</p></div>
+              <div class="field"><label for="f-email">{{ contact.emailLabel }}</label><input id="f-email" name="email" type="email" autocomplete="email" required><p class="err">{{ contact.emailErr }}</p></div>
+            </div>
+            <div class="field">
+              <label for="f-goal">{{ contact.goalLabel }}</label>
+              <select id="f-goal" name="goal">
+                <option value="pt">{{ contact.goals.pt }}</option>
+                <option value="on">{{ contact.goals.on }}</option>
+                <option value="gr">{{ contact.goals.gr }}</option>
+                <option value="nu">{{ contact.goals.nu }}</option>
+                <option value="unsure">{{ contact.goals.unsure }}</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-msg">{{ contact.msgLabel }}</label><textarea id="f-msg" name="message" placeholder="{{ contact.msgPlaceholder }}"></textarea></div>
+            <button class="btn btn-white" type="submit">{{ contact.submit }}</button>
+            <p class="form-error" role="alert" hidden>{{ contact.errorBefore }} <a href="mailto:sharareh.fit@gmail.com">sharareh.fit@gmail.com</a>.</p>
+            <p class="form-note">{{ contact.noteBefore }} <a href="{{ page.privacyHref }}">{{ contact.noteLink }}</a>{{ contact.noteAfter }}</p>
+          </form>
+          <div class="sent" role="status">
+            <h3>{{ contact.sentTitle }}</h3>
+            <p>{{ contact.sentText }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Fitnex</span>
+    <ul>
+      <li><a href="{{ page.cardHref }}">{{ footer.card }}</a></li>
+      <li><a href="{{ page.privacyHref }}">{{ footer.privacy }}</a></li>
+      <li><a href="#top">{{ footer.top }}</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

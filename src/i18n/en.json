@@ -1,0 +1,283 @@
+{
+  "meta": {
+    "title": "Fitnex | Personal Training and Online Fitness Coaching with Sharry",
+    "description": "Personal training, online coaching, small-group strength training and nutrition support with Sharry at Fitnex. Train for health, fitness for life.",
+    "keywords": "Fitnex, Sharry, personal trainer, personal training, fitness coach, online coaching, online fitness coaching, strength training, small group training, nutrition coaching, mobility, Austria",
+    "ogTitle": "Fitnex | Personal Training and Online Fitness Coaching",
+    "ogDescription": "Personal training, online coaching, small-group strength training and nutrition support with Sharry. Train for health, fitness for life.",
+    "twitterDescription": "Personal training, online coaching, small-group strength training and nutrition support with Sharry.",
+    "ogImageAlt": "Fitnex logo with the motto Train for Health. Fitness for Life."
+  },
+  "ld": {
+    "slogan": "Train for Health. Fitness for Life.",
+    "jobTitle": "Personal Trainer and Strength Coach",
+    "services": [
+      {
+        "name": "Personal training",
+        "description": "One-to-one strength and fitness sessions in a studio."
+      },
+      {
+        "name": "Online coaching",
+        "description": "A personal training programme in an app, with weekly check-ins and video form reviews."
+      },
+      {
+        "name": "Small group strength training",
+        "description": "Coached strength sessions for up to four people."
+      },
+      {
+        "name": "Nutrition and habit coaching",
+        "description": "Simple, sustainable habits around protein, sleep and energy."
+      }
+    ],
+    "knowsAbout": [
+      "Personal training",
+      "Strength training",
+      "Online fitness coaching",
+      "Mobility",
+      "Conditioning",
+      "Nutrition coaching",
+      "Pre- and postnatal training"
+    ]
+  },
+  "ui": {
+    "backToTop": "Fitnex, back to top",
+    "home": "Fitnex, home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu",
+    "mainNav": "Main",
+    "mobileNav": "Mobile",
+    "langNav": "Language",
+    "langDe": "Deutsch",
+    "langEn": "English"
+  },
+  "loader": {
+    "label": "Loading"
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "how": "How it works",
+    "clients": "Clients",
+    "faq": "FAQ",
+    "contact": "Contact me"
+  },
+  "hero": {
+    "h1": "Fitnex: personal training and online fitness coaching with Sharry.",
+    "lede": "<strong>Strength coach, in person and online.</strong> I help people feel capable in their own body. We start where you are and build from there.",
+    "seeServices": "See services",
+    "art": "Illustration of a coach holding a kettlebell"
+  },
+  "about": {
+    "art": "Illustration of a coach holding a clipboard and waving",
+    "title": "Hi, I’m Sharry.",
+    "lede": "I started lifting to get through a hard year, and found out that getting stronger changes far more than your body. Now I help other people find that feeling.",
+    "body": "My clients are busy. Some are rebuilding after an injury or a pregnancy, some want to lift their first real weight, some just want to stop feeling stiff. They all want a plan that makes sense, and someone in their corner who notices the small wins.",
+    "creds": [
+      {
+        "title": "Level 3 Personal Trainer",
+        "text": "Certified, insured and first-aid trained"
+      },
+      {
+        "title": "Strength & conditioning",
+        "text": "Barbell and kettlebell specialist"
+      },
+      {
+        "title": "Pre & postnatal",
+        "text": "Training through and after pregnancy"
+      },
+      {
+        "title": "8 years coaching",
+        "text": "Over 300 clients trained"
+      }
+    ],
+    "rulesTitle": "How I coach",
+    "rules": [
+      "Technique before load. Every rep is practice.",
+      "Progress you can measure, not punishment you can feel.",
+      "Training fits your life. Not the other way round."
+    ]
+  },
+  "services": {
+    "title": "Ways to train with me",
+    "intro": "Choose one or mix them. Most clients start with personal training and move online later.",
+    "items": [
+      {
+        "title": "Personal training",
+        "text": "One-to-one sessions in a private studio. Full attention on your technique, your pace and your goals.",
+        "meta": [
+          "60 minutes",
+          "1 to 3 a week",
+          "Packs of 8 or 12"
+        ],
+        "more": "Ask about personal training"
+      },
+      {
+        "title": "Online coaching",
+        "text": "Your programme in an app, wherever you train. I review your lifts on video and adjust the plan every week.",
+        "meta": [
+          "Monthly",
+          "Train anywhere",
+          "Weekly check-in"
+        ],
+        "more": "Ask about online coaching"
+      },
+      {
+        "title": "Small group strength",
+        "text": "Up to four people, one coach. Coached like personal training, with the energy of training together.",
+        "meta": [
+          "Max 4 people",
+          "45 minutes",
+          "Mornings and evenings"
+        ],
+        "more": "Ask about small group"
+      },
+      {
+        "title": "Nutrition and habits",
+        "text": "No meal plans and no banned foods. We build a few simple habits around protein, sleep and energy.",
+        "meta": [
+          "6-week course",
+          "Add to any service",
+          "Fortnightly check-ins"
+        ],
+        "more": "Ask about nutrition"
+      }
+    ]
+  },
+  "focus": {
+    "title": "What we work on together",
+    "items": [
+      {
+        "title": "Strength",
+        "text": "Squat, hinge, push, pull and carry. The basic patterns that make everyday life feel lighter.",
+        "art": "Illustration of a person pressing a barbell overhead"
+      },
+      {
+        "title": "Mobility",
+        "text": "Range you can actually use. We open up stiff hips, shoulders and backs, then make that range strong.",
+        "art": "Illustration of a person in a yoga tree pose on a mat"
+      },
+      {
+        "title": "Conditioning",
+        "text": "Fitness that lasts. Short, structured intervals that improve how fast you recover.",
+        "art": "Illustration of a person skipping with a jump rope"
+      }
+    ]
+  },
+  "process": {
+    "title": "How it works",
+    "steps": [
+      {
+        "title": "Get in touch",
+        "text": "Send me a message about your goals, your history and your week. No pressure to sign up."
+      },
+      {
+        "title": "Assessment",
+        "text": "We test how you move, where you’re strong and what needs care. This is your starting line."
+      },
+      {
+        "title": "Your plan",
+        "text": "A programme written for you, with sessions that fit the time you really have."
+      },
+      {
+        "title": "Train and review",
+        "text": "We train, check in every week and re-test every six. You’ll see your progress in the numbers."
+      }
+    ]
+  },
+  "clients": {
+    "title": "Small wins, written down",
+    "quotes": [
+      {
+        "win": "First unassisted chin-up, age 47.",
+        "quote": "“I’d always believed I just wasn’t a strong person. Sharry never once made me feel like a beginner, even though I very much was.”",
+        "initial": "M",
+        "name": "Maria K., personal training"
+      },
+      {
+        "win": "Back pain gone in 10 weeks.",
+        "quote": "“The video form checks are the best part. She spots things I’d never notice.”",
+        "initial": "D",
+        "name": "Daniel R., online coaching"
+      },
+      {
+        "win": "Back in the gym after baby two.",
+        "quote": "“She knew exactly what to do, and what to wait on.”",
+        "initial": "L",
+        "name": "Leila S., postnatal programme"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions people ask",
+    "items": [
+      {
+        "q": "I’ve never trained before. Is that okay?",
+        "a": "Yes, and it’s one of my favourite places to start. We’ll learn each movement properly before adding any weight."
+      },
+      {
+        "q": "Where do sessions happen?",
+        "a": "In-person sessions take place at a studio that I arrange. Online clients train wherever suits them, at a gym or at home, with minimal equipment."
+      },
+      {
+        "q": "Do I need to change my diet?",
+        "a": "Not unless you want to. If you do, the nutrition plan focuses on simple habits, not meal plans or counting everything."
+      },
+      {
+        "q": "Can I cancel?",
+        "a": "Yes. You can cancel at the end of your current booked period, as long as you let me know in advance."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let’s talk about your first rep.",
+    "intro": "Send me a message. Tell me a little about what you want, and I’ll reply within three working days.",
+    "prefer": "Prefer email?",
+    "nameLabel": "Your name",
+    "nameErr": "Add your name so I know who I’m talking to.",
+    "emailLabel": "Email",
+    "emailErr": "Enter an email address like name@example.com.",
+    "goalLabel": "I’m interested in",
+    "goals": {
+      "pt": "Personal training",
+      "on": "Online coaching",
+      "gr": "Small group strength",
+      "nu": "Nutrition and habits",
+      "unsure": "Not sure yet"
+    },
+    "msgLabel": "What would you like to work on?",
+    "msgPlaceholder": "For example: I want to feel stronger lifting my kids, and my lower back gets sore.",
+    "submit": "Send message",
+    "errorBefore": "Your message couldn’t be sent. Try again, or email",
+    "noteBefore": "Your details are only used to reply to you. See the",
+    "noteLink": "privacy policy",
+    "noteAfter": ".",
+    "sentTitle": "Message sent",
+    "sentText": "Thanks. Sharry will reply by email within three working days.",
+    "formSubject": "New message from the Fitnex website",
+    "fromName": "Fitnex website"
+  },
+  "footer": {
+    "card": "Business card",
+    "privacy": "Privacy",
+    "top": "Back to top",
+    "back": "Back to the website"
+  },
+  "js": {
+    "phrases": [
+      "Fitnex",
+      "Train for Health. Fitness for Life.",
+      "Move Better. Feel Better. Live Better.",
+      "Strong Body. Healthy Mind.",
+      "Fitness Today. Health for Life.",
+      "Stronger Every Day."
+    ],
+    "sending": "Sending…",
+    "send": "Send message",
+    "subjectPrefix": "New message from the Fitnex website"
+  },
+  "privacy": {
+    "title": "Privacy Policy | Fitnex",
+    "description": "How Fitnex handles your personal data: hosting, fonts, the contact form and your rights under the GDPR."
+  }
+}
