@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Fitnex: digital business card (/card/)
+   Same palette as the website: periwinkle to lilac gradient, violet brand,
+   pink accent, Poppins.
+   ========================================================================== */
+
+:root{
+  --v1:#828FFF;
+  --v2:#D496FF;
+  --violet:#6C5CE7;
+  --violet-ink:#5141C9;
+  --pink:#F25C9B;
+  --ink:#1E1A3C;
+  --body:#5D5A78;
+  --soft:#F7F5FF;
+  --soft-2:#EFEBFF;
+  --line:#E8E4F6;
+  --grad:linear-gradient(120deg, var(--v1) 0%, var(--v2) 100%);
+  --grad-warm:linear-gradient(120deg, #F25C9B 0%, #B98CFF 100%);
+}
+
+*{box-sizing:border-box}
+html{background:var(--v1)}   /* no white flash when the page bounces */
+body{margin:0; font-family:"Poppins", system-ui, sans-serif; color:var(--body); -webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--violet); outline-offset:3px; border-radius:6px}
+
+/* ---------- Page ---------- */
+.bcard{
+  position:relative; min-height:100vh; min-height:100dvh;
+  display:flex; flex-direction:column; align-items:center;
+  padding:76px 16px 28px; background:var(--grad); overflow:hidden;
+}
+.bcard::before, .bcard::after{ /* soft light blobs, as in the website hero */
+  content:""; position:fixed; border-radius:50%; pointer-events:none;
+}
+.bcard::before{width:520px; height:520px; left:-200px; top:-200px; background:radial-gradient(circle, rgba(255,255,255,.35), rgba(255,255,255,0) 70%)}
+.bcard::after{width:460px; height:460px; right:-160px; bottom:-160px; background:radial-gradient(circle, rgba(242,92,155,.35), rgba(242,92,155,0) 70%)}
+
+/* ---------- Card ---------- */
+.bcard-card{
+  position:relative; z-index:1; width:100%; max-width:420px;
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+  background:#fff; border-radius:24px; padding:0 22px 26px;
+  box-shadow:0 30px 70px -30px rgba(40,10,90,.55);
+}
+.bcard-badge{
+  display:grid; place-items:center; width:112px; height:112px; margin:-56px 0 14px;
+  border-radius:50%; background:var(--grad); border:6px solid #fff;
+  box-shadow:0 14px 30px -14px rgba(60,30,140,.6);
+}
+.logo{display:block; height:58px; width:auto; aspect-ratio:48 / 56; transform:translateY(1px)}
+.logo-head{fill:var(--pink)}
+.logo-body{fill:none; stroke:#fff; stroke-width:7; stroke-linecap:round; stroke-linejoin:round}
+
+.bcard-brand{margin:0; font-size:.78rem; font-weight:600; letter-spacing:.08em; color:var(--violet-ink)}
+.bcard-name{margin:2px 0 4px; font-size:1.9rem; font-weight:700; color:var(--ink); line-height:1.15}
+.bcard-tagline{margin:0 0 16px; font-size:.95rem}
+
+.bcard-tags{display:flex; flex-wrap:wrap; justify-content:center; gap:6px; list-style:none; margin:0 0 22px; padding:0}
+.bcard-tags li{font-size:.74rem; font-weight:500; color:var(--violet-ink); background:var(--soft-2); border-radius:999px; padding:3px 10px}
+
+/* ---------- Links ---------- */
+.bcard-links{width:100%; display:flex; flex-direction:column; gap:8px; margin-bottom:24px}
+.bcard-link{
+  display:flex; align-items:center; gap:12px; padding:10px 12px; text-align:left; text-decoration:none;
+  background:var(--soft); border:1px solid var(--line); border-radius:14px;
+  transition:background-color .15s, border-color .15s, translate .15s;
+}
+.bcard-link:hover{background:var(--soft-2); border-color:#D3CAF8; translate:0 -1px}
+.bcard-icon{flex:none; width:38px; height:38px; display:grid; place-items:center; border-radius:11px; background:var(--grad)}
+.bcard-icon svg{width:20px; height:20px; fill:none; stroke:#fff; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round}
+.bcard-text{display:flex; flex-direction:column; min-width:0}
+.bcard-label{font-size:.74rem; color:var(--body)}
+.bcard-value{font-size:.95rem; font-weight:500; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+
+/* ---------- QR ---------- */
+.bcard-qr{display:flex; flex-direction:column; align-items:center; gap:8px; margin-bottom:22px}
+.bcard-qr-box{display:inline-flex; padding:12px; border-radius:16px; background:var(--soft); border:1px solid var(--line); overflow:hidden; min-width:182px; min-height:182px}
+.bcard-qr-box svg, .bcard-qr-box canvas{display:block}
+.bcard-qr-caption{margin:0; font-size:.8rem}
+
+/* ---------- Actions ---------- */
+.bcard-actions{display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%}
+.bcard-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font:inherit; font-weight:600; font-size:.92rem; padding:.85em 1em; border:0; border-radius:999px; cursor:pointer; white-space:nowrap;
+  transition:transform .15s, box-shadow .15s, background-position .3s;
+}
+.bcard-btn svg{width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+.bcard-btn-primary{color:#fff; background:var(--grad); background-size:150% 100%; box-shadow:0 12px 24px -14px rgba(76,60,170,.7)}
+.bcard-btn-primary:hover{background-position:100% 0; transform:translateY(-1px)}
+.bcard-btn-soft{color:var(--violet-ink); background:var(--soft-2)}
+.bcard-btn-soft:hover{background:#E4DEFF; transform:translateY(-1px)}
+
+/* ---------- Footer ---------- */
+.bcard-footer{position:relative; z-index:1; display:flex; flex-wrap:wrap; justify-content:center; gap:6px 18px; margin-top:22px; font-size:.82rem; color:rgba(255,255,255,.92)}
+.bcard-footer a{color:#fff; font-weight:500; text-decoration:none}
+.bcard-footer a:hover{text-decoration:underline; text-underline-offset:3px}
+.bcard-footer :focus-visible{outline-color:#fff}
+
+/* ---------- Toast ---------- */
+.card-toast{
+  position:fixed; left:50%; bottom:1.5rem; z-index:10; max-width:calc(100% - 2rem);
+  transform:translate(-50%, 1rem); padding:.65rem 1.2rem; border-radius:999px;
+  background:var(--ink); color:#fff; font-size:.82rem; text-align:center;
+  opacity:0; visibility:hidden; transition:opacity .25s, transform .25s, visibility 0s linear .25s;
+}
+.card-toast.is-shown{opacity:1; visibility:visible; transform:translate(-50%, 0); transition:opacity .25s, transform .25s, visibility 0s}
+.card-toast.is-error{background:#B3164F}
+
+@media (max-width:360px){ .bcard-actions{grid-template-columns:1fr} }
+@media (prefers-reduced-motion: reduce){ .bcard-link, .bcard-btn{transition:none} }
