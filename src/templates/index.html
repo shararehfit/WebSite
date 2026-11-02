@@ -84,8 +84,10 @@
   ]
 }
 </script>
-<!-- Show the loader only on first arrival: skip it when coming from another Fitnex page. Stores nothing. -->
-<script>try{if(document.referrer&&new URL(document.referrer).origin===location.origin)document.documentElement.classList.add('skip-loader')}catch(e){}</script>
+<!-- Show the loader only on first arrival: skip it when this tab has already shown a Fitnex page
+     (marked in window.name, which lives in the tab's memory only, no cookie or storage) or when
+     coming from another Fitnex page. -->
+<script>try{if(window.name==='fitnex'||(document.referrer&&new URL(document.referrer).origin===location.origin))document.documentElement.classList.add('skip-loader');window.name='fitnex'}catch(e){}</script>
 <!-- Texts the scripts need (mottos, form states) -->
 <script id="i18n" type="application/json">{{ json js }}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">

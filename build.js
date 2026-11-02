@@ -100,7 +100,9 @@ function build() {
   const translations = Object.fromEntries(Object.keys(LANGS).map(l => [l, readJson(path.join(SRC, 'i18n', `${l}.json`))]));
   checkParity(translations);
 
-  fs.rmSync(DIST, { recursive: true, force: true });
+  // empty dist/ rather than delete it, so a terminal or Explorer window open in it doesn't block the build
+  fs.mkdirSync(DIST, { recursive: true });
+  for (const entry of fs.readdirSync(DIST)) fs.rmSync(path.join(DIST, entry), { recursive: true, force: true });
   copyDir(PUBLIC, DIST);
 
   const pageNames = Object.keys(LANGS[DEFAULT_LANG].pages);

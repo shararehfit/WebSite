@@ -2,10 +2,14 @@
    Fitnex: small helpers loaded on every page
    ========================================================================== */
 
-/* The footer year stays current without editing the page. */
-// the year in the page's own digits (Persian pages show ۲۰۲۶)
+/* The footer year stays current without editing the page, in the page's own digits
+   (Persian pages show ۲۰۲۶). */
 const year = new Intl.NumberFormat(document.documentElement.lang || 'en', { useGrouping: false }).format(new Date().getFullYear());
 document.querySelectorAll('[data-year]').forEach(n => { n.textContent = year; });
+
+/* Mark this tab as having seen the site, so going from here (e.g. the privacy page) to a home
+   page skips the loader. window.name lives in the tab's memory only and ends with the tab. */
+window.name = 'fitnex';
 
 /* Opened straight from disk (file://), a link to a folder like "en/" or "../" shows the
    folder's file list, because there is no web server to serve its index.html. Add the
