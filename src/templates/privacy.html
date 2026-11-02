@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ page.lang }}">
+<html lang="{{ page.lang }}" dir="{{ page.dir }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,9 +7,7 @@
 <meta name="description" content="{{ privacy.description }}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{{ page.url }}">
-<link rel="alternate" hreflang="de" href="{{ page.urlDe }}">
-<link rel="alternate" hreflang="en" href="{{ page.urlEn }}">
-<link rel="alternate" hreflang="x-default" href="{{ page.urlDefault }}">
+{{{ page.hreflang }}}
 <link rel="apple-touch-icon" href="{{ page.base }}assets/img/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Fitnex">
@@ -32,8 +30,7 @@
     <a class="mark" href="{{ page.homeHref }}" aria-label="{{ ui.home }}"><svg class="logo" viewBox="8 5 48 56" aria-hidden="true"><circle class="logo-head" cx="32" cy="13" r="7"/><path class="logo-body" d="M12 22l20 16 20-16M32 38v19"/></svg>Fitnex</a>
     <div class="nav-end">
       <nav class="lang lang-legal" aria-label="{{ ui.langNav }}">
-        <a href="{{ page.hrefDe }}" hreflang="de" lang="de" aria-current="{{ page.currentDe }}" title="{{ ui.langDe }}">DE</a>
-        <a href="{{ page.hrefEn }}" hreflang="en" lang="en" aria-current="{{ page.currentEn }}" title="{{ ui.langEn }}">EN</a>
+        {{{ page.langLinks }}}
       </nav>
       <a class="btn btn-small" href="{{ page.homeHref }}">{{ footer.back }}</a>
     </div>

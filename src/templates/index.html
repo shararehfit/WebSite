@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ page.lang }}">
+<html lang="{{ page.lang }}" dir="{{ page.dir }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,16 +10,14 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#8E8FFF">
 <link rel="canonical" href="{{ page.url }}">
-<link rel="alternate" hreflang="de" href="{{ page.urlDe }}">
-<link rel="alternate" hreflang="en" href="{{ page.urlEn }}">
-<link rel="alternate" hreflang="x-default" href="{{ page.urlDefault }}">
+{{{ page.hreflang }}}
 <link rel="apple-touch-icon" href="{{ page.base }}assets/img/apple-touch-icon.png">
 
 <!-- Open Graph / social previews -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Fitnex">
 <meta property="og:locale" content="{{ page.ogLocale }}">
-<meta property="og:locale:alternate" content="{{ page.ogLocaleAlt }}">
+{{{ page.ogLocaleAlts }}}
 <meta property="og:url" content="{{ page.url }}">
 <meta property="og:title" content="{{ meta.ogTitle }}">
 <meta property="og:description" content="{{ meta.ogDescription }}">
@@ -43,7 +41,7 @@
       "@id": "https://fitnex.at/#website",
       "url": "https://fitnex.at/",
       "name": "Fitnex",
-      "inLanguage": ["de", "en"],
+      "inLanguage": {{ json page.langCodes }},
       "publisher": { "@id": "https://fitnex.at/#org" }
     },
     {
@@ -123,8 +121,7 @@
     </nav>
     <div class="nav-end">
       <nav class="lang" aria-label="{{ ui.langNav }}">
-        <a href="{{ page.hrefDe }}" hreflang="de" lang="de" aria-current="{{ page.currentDe }}" title="{{ ui.langDe }}" data-lang-switch>DE</a>
-        <a href="{{ page.hrefEn }}" hreflang="en" lang="en" aria-current="{{ page.currentEn }}" title="{{ ui.langEn }}" data-lang-switch>EN</a>
+        {{{ page.langLinks }}}
       </nav>
       <a class="btn btn-small" href="#contact">{{ nav.contact }}</a>
       <button class="menu-toggle" type="button" aria-controls="drawer" aria-expanded="false" aria-label="{{ ui.openMenu }}">
@@ -141,8 +138,7 @@
     <a class="mark" href="#top" aria-label="{{ ui.backToTop }}" data-close-menu><svg class="logo" viewBox="8 5 48 56" aria-hidden="true"><circle class="logo-head" cx="32" cy="13" r="7"/><path class="logo-body" d="M12 22l20 16 20-16M32 38v19"/></svg>Fitnex</a>
     <div class="drawer-tools">
       <nav class="lang lang-drawer" aria-label="{{ ui.langNav }}">
-        <a href="{{ page.hrefDe }}" hreflang="de" lang="de" aria-current="{{ page.currentDe }}" title="{{ ui.langDe }}" data-lang-switch>DE</a>
-        <a href="{{ page.hrefEn }}" hreflang="en" lang="en" aria-current="{{ page.currentEn }}" title="{{ ui.langEn }}" data-lang-switch>EN</a>
+        {{{ page.langLinks }}}
       </nav>
       <button class="drawer-close" type="button" aria-label="{{ ui.closeMenu }}" data-close-menu>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>

@@ -3,7 +3,9 @@
    ========================================================================== */
 
 /* The footer year stays current without editing the page. */
-document.querySelectorAll('[data-year]').forEach(n => { n.textContent = new Date().getFullYear(); });
+// the year in the page's own digits (Persian pages show ۲۰۲۶)
+const year = new Intl.NumberFormat(document.documentElement.lang || 'en', { useGrouping: false }).format(new Date().getFullYear());
+document.querySelectorAll('[data-year]').forEach(n => { n.textContent = year; });
 
 /* Opened straight from disk (file://), a link to a folder like "en/" or "../" shows the
    folder's file list, because there is no web server to serve its index.html. Add the

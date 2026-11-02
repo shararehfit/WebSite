@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /* ==========================================================================
    Fitnex site builder
-   Generates the German (/) and English (/en/) pages from one set of templates
-   and two translation files. Uses only Node's built-in modules, no npm packages.
+   Generates the German (/), English (/en/) and Persian (/fa/) pages from one set
+   of templates and one translation file per language. Uses only Node's built-in modules, no npm packages.
 
      node build.js        build into dist/
    ==========================================================================
@@ -24,10 +24,12 @@ const PUBLIC = path.join(ROOT, 'public');
 const DIST = path.join(ROOT, 'dist');
 const SITE = 'https://fitnex.at';
 
-// Each language: where it lives and what its pages are called.
+// Each language: where it lives, how the switcher shows it, its writing direction
+// and what its pages are called. The order here is the order in the switcher.
 const LANGS = {
-  de: { dir: '', base: '', ogLocale: 'de_AT', pages: { index: 'index.html', privacy: 'datenschutz.html' } },
-  en: { dir: 'en/', base: '../', ogLocale: 'en_GB', pages: { index: 'index.html', privacy: 'privacy.html' } },
+  de: { dir: '', base: '', label: 'DE', name: 'Deutsch', textDir: 'ltr', ogLocale: 'de_AT', pages: { index: 'index.html', privacy: 'datenschutz.html' } },
+  en: { dir: 'en/', base: '../', label: 'EN', name: 'English', textDir: 'ltr', ogLocale: 'en_GB', pages: { index: 'index.html', privacy: 'privacy.html' } },
+  fa: { dir: 'fa/', base: '../', label: 'FA', name: 'فارسی', textDir: 'rtl', ogLocale: 'fa_IR', pages: { index: 'index.html', privacy: 'privacy.html' } },
 };
 const DEFAULT_LANG = 'de';
 
@@ -60,21 +62,21 @@ const render = (template, data, where) => template
   .replace(/\{\{\s*json\s+([\w.@-]+)\s*\}\}/g, (_, key) => toJson(lookup(data, key, where)))
   .replace(/\{\{\s*([\w.@-]+)\s*\}\}/g, (_, key) => escapeHtml(lookup(data, key, where)));
 
-// Every key in one language file must exist in the other, so neither page has gaps.
+// Every key in the default language file must exist in each other one and the
+// other way round, so no page has gaps.
 const flatKeys = (obj, prefix = '') => Object.entries(obj).flatMap(([k, v]) =>
   v && typeof v === 'object' ? flatKeys(v, `${prefix}${k}.`) : [`${prefix}${k}`]);
 
 const checkParity = translations => {
-  const [a, b] = Object.keys(translations);
-  const ka = new Set(flatKeys(translations[a])), kb = new Set(flatKeys(translations[b]));
-  const onlyA = [...ka].filter(k => !kb.has(k)), onlyB = [...kb].filter(k => !ka.has(k));
-  if (onlyA.length || onlyB.length) {
-    throw new Error([
-      'Translation files do not match:',
-      ...onlyA.map(k => `  only in ${a}.json: ${k}`),
-      ...onlyB.map(k => `  only in ${b}.json: ${k}`),
-    ].join('\n'));
+  const a = DEFAULT_LANG, ka = new Set(flatKeys(translations[a]));
+  const problems = [];
+  for (const b of Object.keys(translations).filter(l => l !== a)) {
+    const kb = new Set(flatKeys(translations[b]));
+    problems.push(
+      ...[...ka].filter(k => !kb.has(k)).map(k => `  missing in ${b}.json: ${k}`),
+      ...[...kb].filter(k => !ka.has(k)).map(k => `  only in ${b}.json: ${k}`));
   }
+  if (problems.length) throw new Error(['Translation files do not match:', ...problems].join('\n'));
 };
 
 const copyDir = (from, to) => {
@@ -113,32 +115,39 @@ function build() {
     return `${LANGS[fromLang].base}${LANGS[toLang].dir}${file === 'index.html' ? '' : file}` || './';
   };
 
+  const langCodes = Object.keys(LANGS);
   const written = [];
   for (const [lang, cfg] of Object.entries(LANGS)) {
-    const other = Object.keys(LANGS).find(l => l !== lang);
+    const others = langCodes.filter(l => l !== lang);
     for (const page of pageNames) {
       const data = {
         ...translations[lang],
         page: {
           lang,
+          dir: cfg.textDir,
           base: cfg.base,
           ogLocale: cfg.ogLocale,
-          ogLocaleAlt: LANGS[other].ogLocale,
           url: urlOf(lang, page),
-          urlDe: urlOf('de', page),
-          urlEn: urlOf('en', page),
-          urlDefault: urlOf(DEFAULT_LANG, page),
           homeHref: hrefFrom(lang, lang, 'index'),
           privacyHref: hrefFrom(lang, lang, 'privacy'),
           cardHref: `${cfg.base}card/`,
-          altHref: hrefFrom(lang, other, page),
-          altLang: other,
-          // language switcher: link to each version of this page, and which one is current
-          hrefDe: hrefFrom(lang, 'de', page),
-          hrefEn: hrefFrom(lang, 'en', page),
-          currentDe: lang === 'de' ? 'page' : 'false',
-          currentEn: lang === 'en' ? 'page' : 'false',
           siteUrl: `${SITE}/`,
+          langCodes,
+          // link to this page in each language, e.g. {{ page.hrefs.de }}
+          hrefs: Object.fromEntries(langCodes.map(l => [l, hrefFrom(lang, l, page)])),
+          // <link rel="alternate" hreflang> for every language, plus the default
+          hreflang: langCodes
+            .map(l => `<link rel="alternate" hreflang="${l}" href="${urlOf(l, page)}">`)
+            .concat(`<link rel="alternate" hreflang="x-default" href="${urlOf(DEFAULT_LANG, page)}">`)
+            .join('\n'),
+          ogLocaleAlts: others
+            .map(l => `<meta property="og:locale:alternate" content="${LANGS[l].ogLocale}">`)
+            .join('\n'),
+          // language switcher: a link to each version of this page, the current one marked
+          langLinks: langCodes
+            .map(l => `<a href="${hrefFrom(lang, l, page)}" hreflang="${l}" lang="${l}" dir="${LANGS[l].textDir}"`
+              + ` aria-current="${l === lang ? 'page' : 'false'}" title="${LANGS[l].name}" data-lang-switch>${LANGS[l].label}</a>`)
+            .join('\n'),
         },
       };
       // longer content (the privacy policy) lives in its own file per language
@@ -146,6 +155,8 @@ function build() {
       if (fs.existsSync(contentFile)) {
         data.content = render(read(contentFile), data, path.relative(ROOT, contentFile));
       }
+      // the page scripts also need the language and its writing direction
+      if (data.js) data.js = { ...data.js, lang, dir: cfg.textDir };
       const templateFile = path.join(SRC, 'templates', `${page}.html`);
       const html = render(read(templateFile), data, `${path.relative(ROOT, templateFile)} [${lang}]`);
       const out = `${cfg.dir}${cfg.pages[page]}`;
@@ -164,7 +175,7 @@ function build() {
 </head><body><p>This page has moved to <a href="en/privacy.html">${urlOf('en', 'privacy')}</a>.</p></body></html>
 `);
 
-  // Sitemap with language alternates, so Google links the German and English versions.
+  // Sitemap with language alternates, so Google links the language versions together.
   const today = new Date().toISOString().slice(0, 10);
   const entries = [];
   for (const page of pageNames) {

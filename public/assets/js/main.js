@@ -13,10 +13,13 @@
      Coming from another Fitnex page (language switch, privacy page) skips it; the check runs
      in the page head, which adds .skip-loader before anything is drawn. Nothing is stored. ---------- */
   const skipLoader = document.documentElement.classList.contains('skip-loader');
+  const rtl = document.documentElement.dir === 'rtl';
   const fontsReady = Promise.race([
     Promise.all([
       document.fonts.load('700 100px Poppins'),
       document.fonts.load('400 16px Poppins'),
+      // Persian: the sample text makes the browser fetch Vazirmatn (it only covers Persian letters)
+      ...(rtl ? [document.fonts.load('700 100px Vazirmatn', 'فا'), document.fonts.load('400 16px Vazirmatn', 'فا')] : []),
     ]).catch(() => {}),
     wait(2500),
   ]);
@@ -47,11 +50,12 @@
       phrases: PHRASES,
       color: '#FFFFFF',
       vapour: '#4B3BC4',
-      family: 'Poppins, sans-serif',
+      family: getComputedStyle(document.body).fontFamily,  // Poppins, or Vazirmatn for Persian
       weight: 700,
       firstStretch: 'normal',
       stretch: 'normal',
-      align: 'left',
+      align: rtl ? 'right' : 'left',
+      rtl,
       area: () => {
         const c = canvas.getBoundingClientRect(), s = slot.getBoundingClientRect();
         return { x: s.left - c.left, y: s.top - c.top, width: s.width, height: s.height };

@@ -29,7 +29,8 @@
       sweep: 1100,
       vaporize: 2300,
       gap: 250,
-      align: 'center',           // 'center' or 'left' within the text area
+      align: 'center',           // 'center', 'left' or 'right' within the text area
+      rtl: false,                // right-to-left script: vapour sweeps and drifts the other way
       area: null,                // () => {x, y, width, height} in CSS px, relative to the canvas
       onPhrase: null,
     }, options);
@@ -66,11 +67,12 @@
       const A = r
         ? { x: r.x * dpr, y: r.y * dpr, w: r.width * dpr, h: r.height * dpr }
         : { x: 0, y: 0, w: W, h: H };
-      const left = o.align === 'left';
+      const left = o.align === 'left', right = o.align === 'right';
 
       offCtx.clearRect(0, 0, W, H);
       offCtx.font = font(100);
-      const maxW = A.w * (left ? 1 : first ? .9 : .86);
+      offCtx.direction = o.rtl ? 'rtl' : 'ltr';
+      const maxW = A.w * (left || right ? 1 : first ? .9 : .86);
       const maxH = A.h * (first ? .62 : .4);
 
       let lines = [text];
@@ -94,10 +96,10 @@
 
       offCtx.font = font(size);
       offCtx.fillStyle = o.color;
-      offCtx.textAlign = left ? 'left' : 'center';
+      offCtx.textAlign = left ? 'left' : right ? 'right' : 'center';
       offCtx.textBaseline = 'middle';
       const lh = size * 1.02;
-      const x = left ? A.x : A.x + A.w / 2;
+      const x = left ? A.x : right ? A.x + A.w : A.x + A.w / 2;
       const y0 = A.y + A.h / 2 - ((lines.length - 1) * lh) / 2;
       lines.forEach((line, i) => offCtx.fillText(line, x, y0 + i * lh));
 
@@ -162,15 +164,18 @@
 
     function drawVapour(time, dt) {
       const p = P, k = dt / 16.67;
-      const sweepX = p.minX - 20 + (p.maxX - p.minX + 60) * easeInOut(Math.min(time / o.sweep, 1));
+      // the sweep follows the reading direction: left to right, or right to left
+      const dir = o.rtl ? -1 : 1;
+      const progress = (p.maxX - p.minX + 60) * easeInOut(Math.min(time / o.sweep, 1));
+      const sweepX = o.rtl ? p.maxX + 20 - progress : p.minX - 20 + progress;
       u32.fill(0);
       const s = p.step, drift = dpr;
       for (let i = 0; i < p.count; i++) {
         const r0 = p.rgb[i * 3], g0 = p.rgb[i * 3 + 1], b0 = p.rgb[i * 3 + 2];
         if (!p.free[i]) {
-          if (p.x[i] <= sweepX) {
+          if (dir * p.x[i] <= dir * sweepX) {
             p.free[i] = 1;
-            p.vx[i] = (.5 + Math.random() * 1.8) * drift;
+            p.vx[i] = dir * (.5 + Math.random() * 1.8) * drift;
             p.vy[i] = -(.15 + Math.random() * 1.3) * drift;
             p.decay[i] = .006 + Math.random() * .014;
           } else {

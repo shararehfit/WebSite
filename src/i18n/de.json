@@ -47,9 +47,7 @@
     "menu": "Menü",
     "mainNav": "Hauptmenü",
     "mobileNav": "Mobiles Menü",
-    "langNav": "Sprache",
-    "langDe": "Deutsch",
-    "langEn": "English"
+    "langNav": "Sprache"
   },
   "loader": {
     "label": "Wird geladen"
